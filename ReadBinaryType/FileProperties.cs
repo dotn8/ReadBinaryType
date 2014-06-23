@@ -14,7 +14,7 @@ namespace ReadBinaryType
         public BinaryType BinaryType { get; set; }
         public string ToCsvLine()
         {
-            return String.Join(",\t", Value, BinaryType.ToString());
+            return String.Join(",\t", Value, BinaryType.BinaryTypeToString());
         }
     }
 }

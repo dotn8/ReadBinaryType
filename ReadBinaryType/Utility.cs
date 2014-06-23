@@ -5,7 +5,7 @@ namespace ReadBinaryType
 {
     public static class Utility
     {
-        public static String ToString(this BinaryType binaryType)
+        public static String BinaryTypeToString(this BinaryType binaryType)
         {
             switch (binaryType)
             {

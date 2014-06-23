@@ -11,9 +11,23 @@ namespace ReadBinaryType
 
         private static void Main(string[] args)
         {
-            foreach (string arg in args)
+            var options = new Options();
+            if (CommandLine.Parser.Default.ParseArguments(args, options))
             {
-                Console.WriteLine(GetBinaryType(arg));
+                foreach (string fileName in options.FileNames)
+                {
+                    Console.WriteLine(GetBinaryType(fileName));
+                }
+
+                if (options.Interactive)
+                {
+                    Console.WriteLine("Press any key to continue...");
+                    Console.ReadKey();
+                }
+            }
+            else
+            {
+                options.GetUsage();
             }
         }
 

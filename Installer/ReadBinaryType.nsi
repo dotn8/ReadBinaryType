@@ -7,11 +7,11 @@
 !define APP_NAME "ReadBinaryType"
 !define COMP_NAME "John Billington"
 !define WEB_SITE "https://github.com/JohnBillington"
-!define VERSION "0.0.0.1"
+!define VERSION "0.0.0.2"
 !define COPYRIGHT "John Billington © 2014"
 !define DESCRIPTION "This is a Windows C# console application that takes as command line parameters a list of EXEs or DLLs and prints to standard output a CSV list of the filenames and their type (e.g., 32-bit vs 64.bit)."
 !define LICENSE_TXT "..\LICENSE.txt"
-!define INSTALLER_NAME "readbinarytype-installer-0.0.0.1.exe"
+!define INSTALLER_NAME "readbinarytype-installer-0.0.0.2.exe"
 !define MAIN_APP_EXE "ReadBinaryType.exe"
 !define INSTALL_TYPE "SetShellVarContext all"
 !define REG_ROOT "HKLM"
@@ -78,12 +78,11 @@ Section -MainProgram
 ${INSTALL_TYPE}
 SetOverwrite ifnewer
 SetOutPath "$INSTDIR"
+File "..\ReadBinaryType\bin\Release\CommandLine.dll"
 File "..\ReadBinaryType\bin\Release\ReadBinaryType.exe"
 File "..\ReadBinaryType\bin\Release\ReadBinaryType.exe.config"
-File "..\ReadBinaryType\bin\Release\ReadBinaryType.pdb"
 File "..\ReadBinaryType\bin\Release\ReadBinaryType.vshost.exe"
 File "..\ReadBinaryType\bin\Release\ReadBinaryType.vshost.exe.config"
-File "..\ReadBinaryType\bin\Release\ReadBinaryType.vshost.exe.manifest"
 SectionEnd
 
 ######################################################################
